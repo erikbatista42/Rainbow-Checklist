@@ -17,6 +17,15 @@ def update(index, item): # update item code here
 def destroy(index): # destory item code here
     checklist.pop()
 
+def mark_completed(index):
+
+
+def list_all_items():
+    index = 0
+    for list_item in checklist:
+        print("{} {}".format(index, list_item))
+        index += 1
+
 def test(): # test the functions above
     create("purple sox") # Creates elements in the checklist
     create("red cloak")
@@ -28,5 +37,8 @@ def test(): # test the functions above
     # print(read(1))
 
     print(checklist)
+    list_all_items()
 
 test() # runs the above function
+
+
