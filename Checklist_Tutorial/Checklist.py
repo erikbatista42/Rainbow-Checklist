@@ -47,7 +47,7 @@ def select(function_code):
     elif function_code == "R":
         item_index = input("Index Number?")
         # item_index must exist else our program will crash
-        read(item_index)
+        read(int(item_index))
 
         # print all items
     elif function_code == "P":
@@ -60,8 +60,9 @@ def select(function_code):
     return True
 
 def test(): # test the functions above
-    # create("purple sox") # Creates elements in the checklist
-    # create("red cloak")
+    create("purple sox") # Creates elements in the checklist
+    create("red cloak")
+    # read(0)
     # print(read(0))
     # print(read(1))
     # update(0, "purple socks")
@@ -82,9 +83,9 @@ def test(): # test the functions above
     # select("C")
     # list_all_items()
     # select("R")
-    list_all_items()
-    user_value = input("Please enter a value:")
-    print(user_value)
+    # list_all_items()
+    # user_value = input("Please enter a value:")
+    # print(user_value)
 
     
 test() # runs the above function
