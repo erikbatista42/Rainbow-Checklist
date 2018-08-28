@@ -51,14 +51,15 @@ def select(function_code):
 
     elif function_code == "U":
         update_item_index = input("Index number of item you want to update:")
+        print(update_item_index)
         update_item_text = input("Text of what you want to update the item with:")
-        update(update_item_index, str(update_item_text))
-    # elif function_code == "D":
+        print(type(update_item_text))
+        update(update_item_index, update_item_text)
+        # update(update_item_index)
+    elif function_code == "D":
+        destroy_item_index = input("Index number of item you want to destroy:")
 
-
-        # destroy_item_index = input("Index number of item you want to destroy:")
-        # destroy_item_index_ = 
-        # destroy(destroy_item)
+        destroy(destroy_item_index)
         # print all items
     elif function_code == "P":
         list_all_items()
@@ -72,11 +73,13 @@ def select(function_code):
 def test(): # test the functions above
     create("purple sox") # Creates elements in the checklist
     create("red cloak")
-
+    # update(0, "zoom")
+    print(checklist)
     running = True
     while running:
         selection = user_input("Press C to add to list, R to read from list, U to update, D to destory, P to display list and Q to quit")
         running = select(selection)
+
 test() # runs the above function
 # add update and destroy functions 
 # Allow for the user to use upper or lowercase for function selection
