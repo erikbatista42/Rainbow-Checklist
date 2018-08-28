@@ -1,32 +1,27 @@
-# # creating a list
-# checklist = list()
+# CRUD - Create, Read, Update, Destroy
+checklist = list()
+
+ # a function that adds something to our checklist
+def create(item): # create item code here
+    checklist.append(item)
 # print(checklist)
 
-# checklist.append("hello")
-# print(checklist)
+def read(index): # read item code here
+    # item = checklist[index]
+    print(checklist[index])
+    return checklist[index]
 
-# checklist.append("world")
-# print(checklist)
+def update(index, item): # update item code here
+    checklist[index] = item
 
-# # a function that adds something to our checklist
-# def add_something_to_my_checklist(add_item):
-#     checklist.append(add_item)
-# # adding something to our list when our function is called
-# add_something_to_my_checklist("i'm")
-# print(checklist)
+def destroy(index): # destory item code here
+    checklist.pop()
 
-# add_something_to_my_checklist("erik")
-# print(checklist)
-
-# def read(index):
-#     # item = checklist[index]
-#     print(index)
-#     return checklist[index]
-# read(checklist[3])
-
-checklist = ["Hello", "world"]
-print(checklist)
-checklist[1] = "cats"
-print(checklist)
-
-# def update
+def test(): # test the functions above
+    create("Hey,") # Creates elements in the checklist
+    create(" Erik")
+    print(checklist)
+    read(1) # reads what's on the 1 index in the checklist
+    update(0, "Sup")
+    print(checklist)
+test()
