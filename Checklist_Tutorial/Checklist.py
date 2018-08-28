@@ -44,16 +44,21 @@ def select(function_code):
         create(input_item)
     #read item
     elif function_code == "R" or function_code == "r":
-        item_index = input("Index Number: ")
+        
         # item_index must exist else our program will crash
+        try:
+            item_index = input("Index Number: ")
+        except IndexError:
+            print("try a number that's in range.")
         read(int(item_index))
 
     elif function_code == "U"or function_code == "u":
         update_index = input("Index number to update: ")
+
         update_text = input("Update item text with..: ")
         # update_text = input("Text of what you want to update the item with:")
         # print(type(update_item_text))
-        update(update_index, update_text)
+        update(int(update_index), str(update_text))
 
 
     elif function_code == "D" or function_code == "d":
