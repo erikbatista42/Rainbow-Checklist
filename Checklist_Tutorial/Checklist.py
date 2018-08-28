@@ -18,7 +18,14 @@ def destroy(index): # destory item code here
     checklist.pop()
 
 def mark_completed(index):
-
+    # checklist.insert() = index
+    #  complete_Mark = checklist.insert(index, "√")
+    # complete_Mark = checklist[index] 
+    # complete_Mark =  "√"
+    complete_Mark = "√" + checklist[index] 
+    # checklist.
+    #  complete_Mark = checklist[index]  + "√"
+    return complete_Mark
 
 def list_all_items():
     index = 0
@@ -29,15 +36,18 @@ def list_all_items():
 def test(): # test the functions above
     create("purple sox") # Creates elements in the checklist
     create("red cloak")
-    print(read(0))
-    print(read(1))
-    update(0, "purple socks")
-    destroy(1)
-    print(read(0))
+    # print(read(0))
     # print(read(1))
+    # update(0, "purple socks")
+    # destroy(1)
+    # print(read(0))
+    # # print(read(1))
 
+    # print(checklist)
+    # list_all_items()
+    # create("bananas")
+    print(mark_completed(0))
     print(checklist)
-    list_all_items()
 
 test() # runs the above function
 
