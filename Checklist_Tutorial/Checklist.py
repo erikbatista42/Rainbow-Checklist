@@ -18,10 +18,15 @@ def destroy(index): # destory item code here
     checklist.pop()
 
 def test(): # test the functions above
-    create("Hey,") # Creates elements in the checklist
-    create(" Erik")
+    create("purple sox") # Creates elements in the checklist
+    create("red cloak")
+    print(read(0))
+    print(read(1))
+    update(0, "purple socks")
+    destroy(1)
+    print(read(0))
+    # print(read(1))
+
     print(checklist)
-    read(1) # reads what's on the 1 index in the checklist
-    update(0, "Sup")
-    print(checklist)
-test()
+
+test() # runs the above function
