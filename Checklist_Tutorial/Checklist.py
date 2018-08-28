@@ -35,36 +35,38 @@ def mark_completed(index):
 
 def user_input(prompt):
     user_input = input(prompt)
-
     return user_input
 
 def select(function_code):
     # Create item
-    if function_code == "C":
-        input_item = input("Input item:")
+    if function_code == "C" or function_code == "c":
+        input_item = input("New item name:")
         create(input_item)
     #read item
-    elif function_code == "R":
-        item_index = input("Index Number?")
+    elif function_code == "R" or function_code == "r":
+        item_index = input("Index Number: ")
         # item_index must exist else our program will crash
         read(int(item_index))
 
-    elif function_code == "U":
-        update_item_index = input("Index number of item you want to update:")
-        print(update_item_index)
-        update_item_text = input("Text of what you want to update the item with:")
-        print(type(update_item_text))
-        update(update_item_index, update_item_text)
-        # update(update_item_index)
-    elif function_code == "D":
-        destroy_item_index = input("Index number of item you want to destroy:")
+    elif function_code == "U"or function_code == "u":
+        update_index = input("Index number to update: ")
+        update_text = input("Update item text with..: ")
+        # update_text = input("Text of what you want to update the item with:")
+        # print(type(update_item_text))
+        update(update_index, update_text)
 
+
+    elif function_code == "D" or function_code == "d":
+        destroy_item_index = input("Index number of item you want to destroy:")
         destroy(destroy_item_index)
+        # if destroy_item_index != type(str()):
+        #     print("please enter a valid Integer next time.")
+            
         # print all items
-    elif function_code == "P":
+    elif function_code == "P" or function_code == "p":
         list_all_items()
         # catch all
-    elif function_code == "Q":
+    elif function_code == "Q"or function_code == "q":
         return False
     else:
         print("Unknown Option")
@@ -73,8 +75,7 @@ def select(function_code):
 def test(): # test the functions above
     create("purple sox") # Creates elements in the checklist
     create("red cloak")
-    # update(0, "zoom")
-    print(checklist)
+    # print(checklist)
     running = True
     while running:
         selection = user_input("Press C to add to list, R to read from list, U to update, D to destory, P to display list and Q to quit")
