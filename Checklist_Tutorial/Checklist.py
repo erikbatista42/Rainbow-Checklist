@@ -15,7 +15,7 @@ def update(index, item): # update item code here
     checklist[index] = item
 
 def destroy(index): # destory item code here
-    checklist.pop()
+    del checklist[index]
 
 def list_all_items():
     index = 0
@@ -63,7 +63,7 @@ def select(function_code):
 
     elif function_code == "D" or function_code == "d":
         destroy_item_index = input("Index number of item you want to destroy:")
-        destroy(destroy_item_index)
+        destroy(int(destroy_item_index))
         # if destroy_item_index != type(str()):
         #     print("please enter a valid Integer next time.")
             
