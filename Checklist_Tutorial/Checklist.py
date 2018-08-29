@@ -48,9 +48,10 @@ def select(function_code):
         # item_index must exist else our program will crash
         try:
             item_index = input("Index Number: ")
+            read(int(item_index))
         except IndexError:
             print("try a number that's in range.")
-        read(int(item_index))
+        
 
     elif function_code == "U"or function_code == "u":
         update_index = input("Index number to update: ")
@@ -80,7 +81,7 @@ def select(function_code):
 def test(): # test the functions above
     create("purple sox") # Creates elements in the checklist
     create("red cloak")
-    # print(checklist)
+    print(checklist)
     running = True
     while running:
         selection = user_input("Press C to add to list, R to read from list, U to update, D to destory, P to display list and Q to quit")
