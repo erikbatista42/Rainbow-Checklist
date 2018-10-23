@@ -6,7 +6,7 @@ checklist = list()
 def create(item):
     checklist.append(item)
 
-# Readdef read(index):
+# Read
     return checklist[index]
 # Update
 def update(index, item):
@@ -29,7 +29,6 @@ def test():
     print(read(0))
     print(read(1))
 
-
     update(0, "purple socks")
 
     destroy(1)
@@ -37,6 +36,7 @@ def test():
     print(read(0))
 
     list_all_items()
+
 
 test()
 
