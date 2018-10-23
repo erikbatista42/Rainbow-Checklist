@@ -6,8 +6,7 @@ checklist = list()
 def create(item):
     checklist.append(item)
 
-# Read
-def read(index):
+# Readdef read(index):
     return checklist[index]
 # Update
 def update(index, item):
