@@ -28,14 +28,18 @@ def list_all_items():
 def mark_completed(index):
     # Complete the function above. Hint: Add a character to the front of the checklist item that denotes an item as completed.
     # All we need to do is append some text to the front of the checked item in the list. Let's use the character √ to indicate whether an item is marked as completed or not.d
-    pass
+    item = checklist[index]
+    item_list = list(item)
+    item_list.insert(0, "√")
+    new_word = "".join(item_list)
+    update(index, new_word)
 
 def select(function_code):
     # Create item
     if function_code == "C":
         input_item = input("Input item: ")
         create(input_item)
-    # Read item
+    # Read
     elif function_code == "R":
         item_index = user_input("Index number? ")
         # Remember that item_index must actually exist our porgram will crash
@@ -54,6 +58,10 @@ def select(function_code):
     elif function_code == "P":
         list_all_items()
 
+    elif function_code == "M":
+        item_index = user_input("Index number? ")
+        mark_completed(int(item_index))
+
     ## This is where we want to stop our loop
     elif function_code == "Q":
         return False
@@ -67,14 +75,14 @@ def user_input(prompt):
     # the input function will display a message in the terminal
     # and wait for user input.
     user_input = input(prompt)
-    return user_input
+    return user_input.upper()
 
 def test():
     running = True
     while running:
-        selection = user_input("Press C to add to list, R to Read from list, U to Update an item from the list, D to delete something, P to display list, and Q to quit")
-        select(selection)
+        selection = user_input("Press C to add to list, R to Read from list, U to Update an item from the list, D to delete something, P to display list and Press Q to Exit")
 
+        select(selection)
 
 test()
 
