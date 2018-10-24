@@ -12,11 +12,11 @@ def read(index):
 
 def update(index, item):
     # Update code here
-    checklist[index] = item
+    checklist[int(index)] = item
 
 def destroy(index):
     # Destroy code here
-    checklist.pop(index)
+    checklist.pop(int(index))
 
 def list_all_items():
     # Code to list all items in list
@@ -33,14 +33,22 @@ def mark_completed(index):
 def select(function_code):
     # Create item
     if function_code == "C":
-        input_item = input("Input item:")
+        input_item = input("Input item: ")
         create(input_item)
     # Read item
     elif function_code == "R":
-        item_index = user_input("Index number?")
-
+        item_index = user_input("Index number? ")
         # Remember that item_index must actually exist our porgram will crash
         read(item_index)
+
+    elif function_code == "U":
+        update_item_index = user_input("Index number? ")
+        update_item_info = user_input("Input item: ")
+        update(update_item_index, update_item_info)
+
+    elif function_code == "D":
+        item_input = user_input("Index number? ")
+        destroy(item_input)
 
     # Print all items
     elif function_code == "P":
@@ -64,7 +72,7 @@ def user_input(prompt):
 def test():
     running = True
     while running:
-        selection = user_input("Press C to add to list, R to Read from list and P to display list")
+        selection = user_input("Press C to add to list, R to Read from list, U to Update an item from the list, D to delete something, P to display list, and Q to quit")
         select(selection)
 
 
