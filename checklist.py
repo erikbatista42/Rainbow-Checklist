@@ -45,7 +45,10 @@ def select(function_code):
     elif function_code == "R":
         item_index = user_input("Index number? ")
         # Remember that item_index must actually exist our porgram will crash
-        read(item_index)
+        try:
+            read(item_index)
+        except IndexError:
+            print("ERROR! Index doesn't exist!")
 
     elif function_code == "U":
         update_item_index = user_input("Index number? ")
