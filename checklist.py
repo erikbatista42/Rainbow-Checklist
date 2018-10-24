@@ -1,3 +1,5 @@
+import sys
+
 checklist = list()
 
 def create(item):
@@ -64,7 +66,8 @@ def select(function_code):
 
     ## This is where we want to stop our loop
     elif function_code == "Q":
-        return False
+        exit = sys.exit()
+        return exit
 
     # Catch all
     else:
