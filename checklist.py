@@ -53,11 +53,18 @@ def select(function_code):
     elif function_code == "U":
         update_item_index = user_input("Index number? ")
         update_item_info = user_input("Input item: ")
-        update(update_item_index, update_item_info)
+
+        try:
+            update(update_item_index, update_item_info)
+        except IndexError:
+            print("ERROR! Index number doesn't exist!")
 
     elif function_code == "D":
         item_input = user_input("Index number? ")
-        destroy(item_input)
+        try:
+            destroy(item_input)
+        except IndexError:
+            print("ERROR! Index number doesn't exist!")
 
     # Print all items
     elif function_code == "P":
@@ -65,7 +72,11 @@ def select(function_code):
 
     elif function_code == "M":
         item_index = user_input("Index number? ")
-        mark_completed(int(item_index))
+        try:
+            mark_completed(int(item_index))
+        except IndexError:
+            print("ERROR! Index number doesn't exist!")
+
 
     ## This is where we want to stop our loop
     elif function_code == "Q":
@@ -86,7 +97,7 @@ def user_input(prompt):
 def test():
     running = True
     while running:
-        selection = user_input("Press C to add to list, R to Read from list, U to Update an item from the list, D to delete something, P to display list and Press Q to Exit")
+        selection = user_input("Press C to add to list, R to Read from list, U to Update an item from the list, D to delete something, \nM to mark something completed, P to display list and Q to Exit")
 
         select(selection)
 
