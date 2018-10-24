@@ -6,7 +6,9 @@ def create(item):
 
 def read(index):
     # Read code here
-    return checklist[index]
+    pickedItem = checklist[int(index)]
+    print(pickedItem)
+    return pickedItem
 
 def update(index, item):
     # Update code here
@@ -20,7 +22,7 @@ def list_all_items():
     # Code to list all items in list
     index = 0
     for list_item in checklist:
-        print(str(index) + list_item)
+        print(str(index) + " " + list_item)
         index += 1
 
 def mark_completed(index):
@@ -58,8 +60,6 @@ def user_input(prompt):
     # and wait for user input.
     user_input = input(prompt)
     return user_input
-
-
 
 def test():
     running = True
